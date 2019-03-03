@@ -1,19 +1,38 @@
-
-
 def count_char(text):
-    # TODO count the number of times each character occurs in the text
-    # and print out each character along with its count
-    pass
+    freq = {}
+    for letter in text:
+        keys = freq.keys()
+        if letter in keys:
+            freq[letter] += 1
+        else:
+            freq[letter]=1
+        
+    for letter in freq:
+        print(letter, freq[letter])
+    
+    return
 
 def count_char_insensitive(text):
-    # TODO do the same as `count_char` but in a case-insensitive manner
-    pass
+    return count_char(text.lower())
 
 
 def count_char_ordered(text):
-    # TODO print the characters in the descending order of the count
-    # HINT: lookup `sorted()` in the Python documentation
     
-    # This task is quite difficult, so please feel free to make use of
-    # resources online (Python docs, Stack Overflow, etc.)
-    pass
+    freq = {}
+    for letter in text.lower():
+        keys = freq.keys()
+        if letter in keys:
+            freq[letter] += 1
+        else:
+            freq[letter]=1
+
+    thing = sorted(freq, key = freq.get, reverse=True)
+    nums = sorted(freq.values(), reverse=True)
+    
+    for i in range(0, len(thing)):
+        print(thing[i], nums[i])
+    
+    return
+    
+    
+
